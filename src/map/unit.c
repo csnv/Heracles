@@ -1360,8 +1360,8 @@ static int unit_set_walkdelay_timer(int tid, int64 tick, int id, intptr_t data)
 	if (target == NULL)
 		return 0;
 
-	int delay = GetWord(data, 0);
-	int type = GetWord(data, 1);
+	int delay = (int)GetWord((uint32)data, 0);
+	int type = (int)GetWord((uint32)data, 1);
 
 	unit->set_walkdelay(target, tick, delay, type);
 
